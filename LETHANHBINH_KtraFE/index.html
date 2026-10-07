@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Giỏ Hàng - Amazon Clone</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <header class="header">
+        <div class="logo">amazon<span>.com</span></div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search Amazon">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="cart-icon-container">
+            <i class="fas fa-shopping-cart cart-icon"></i>
+            <span id="cart-count" class="cart-badge">0</span>
+        </div>
+    </header>
+
+    
+    <div class="container">
+        
+        <div class="cart-main">
+            <h1>Shopping Cart</h1>
+            <div class="price-header">Price</div>
+            <hr>
+
+            
+            <div class="cart-item" data-price="129.99">
+                <img src="https://cdn.sablanca.vn/ImageProducts/hb0145/pik/hb0145_pik_1000x1000_0256086398.jpg" alt="Tommy Hilfiger Bag">
+                <div class="item-details">
+                    <h3>Túi xách </h3>
+                    <p class="stock">In Stock</p>
+                    <div class="item-controls">
+                        <label>Qty:</label>
+                        <select class="qty-select">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <span class="delete-btn">Delete</span>
+                    </div>
+                </div>
+                <div class="item-price">$<span class="item-total">129.99</span></div>
+            </div>
+            <hr>
+
+            <!-- Sản phẩm 2 -->
+            <div class="cart-item" data-price="89.50">
+                <img src="https://i.pinimg.com/736x/29/85/ae/2985ae8ef7683f84498143b7079ba85e.jpg" alt="Lark & Ro Women Shoes">
+                <div class="item-details">
+                    <h3>mo to do choi </h3>
+                    <p class="stock">In Stock</p>
+                    <div class="item-controls">
+                        <label>Qty:</label>
+                        <select class="qty-select">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <span class="delete-btn">Delete</span>
+                    </div>
+                </div>
+                <div class="item-price">$<span class="item-total">89.50</span></div>
+            </div>
+            <hr>
+
+            <!-- Sản phẩm 3 -->
+            <div class="cart-item" data-price="45.00">
+                <img src="https://cdn.hstatic.net/products/200000471735/mlsa550k5-2-b006__1__0661fb831ce34bcba6cbb503c5266d50.jpg" alt="Men's Casual Shirt">
+                <div class="item-details">
+                    <h3>ao so mi </h3>
+                    <p class="stock">In Stock</p>
+                    <div class="item-controls">
+                        <label>Qty:</label>
+                        <select class="qty-select">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <span class="delete-btn">Delete</span>
+                    </div>
+                </div>
+                <div class="item-price">$<span class="item-total">45.00</span></div>
+            </div>
+            <hr>
+
+            <!-- Tổng tiền dưới danh sách -->
+            <div class="subtotal-bottom">
+                Subtotal (<span class="total-qty">3</span> items): <strong>$<span id="subtotal-amount">264.49</span></strong>
+            </div>
+        </div>
+
+        <!-- Cột phải: Khối thanh toán Subtotal -->
+        <div class="cart-sidebar">
+            <div class="subtotal-box">
+                <p>Subtotal (<span class="total-qty">3</span> items): <br><strong>$<span id="sidebar-subtotal-amount">264.49</span></strong></p>
+                <button class="checkout-btn">Proceed to checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Giỏ Hàng - Amazon Clone</title>
+    <!-- Nhúng Font Awesome theo yêu cầu đề bài -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">amazon<span>.com</span></div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search Amazon">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="cart-icon-container">
+            <i class="fas fa-shopping-cart cart-icon"></i>
+            <span id="cart-count" class="cart-badge">0</span>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Cột trái: Danh sách sản phẩm -->
+        <div class="cart-main">
+            <h1>Shopping Cart</h1>
+            <div class="price-header">Price</div>
+            <hr>
+
+            <!-- Sản phẩm 1 -->
+            <div class="cart-item" data-price="1299.99">
+                <img src="https://tnj.vn/22526-large_default/bo-trang-suc-ngoc-trai-dep-bts0013.jpg" alt="Tommy Hilfiger Bag">
+                <div class="item-details">
+                    <h3>Trang suc 1</h3>
+                    <p class="stock">In Stock</p>
+                    <div class="item-controls">
+                        <label>Qty:</label>
+                        <select class="qty-select">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <span class="delete-btn">Delete</span>
+                    </div>
+                </div>
+                <div class="item-price">$<span class="item-total">129.99</span></div>
+            </div>
+            <hr>
+
+            <!-- Sản phẩm 2 -->
+            <div class="cart-item" data-price="89.50">
+                <img src="https://cdn.hstatic.net/products/200000978078/4_1bde15fae12a4dcc980001219a6f766c_master.jpg" alt="Lark & Ro Women Shoes">
+                <div class="item-details">
+                    <h3>tui xach </h3>
+                    <p class="stock">In Stock</p>
+                    <div class="item-controls">
+                        <label>Qty:</label>
+                        <select class="qty-select">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <span class="delete-btn">Delete</span>
+                    </div>
+                </div>
+                <div class="item-price">$<span class="item-total">89.50</span></div>
+            </div>
+            <hr>
+
+            <!-- Sản phẩm 3 -->
+            <div class="cart-item" data-price="45.00">
+                <img src="https://cdn.dafc.com.vn/catalog/product/dafc/1163108_000_67062725697f8.jpg" alt="Men's Casual Shirt">
+                <div class="item-details">
+                    <h3>giay cao got</h3>
+                    <p class="stock">In Stock</p>
+                    <div class="item-controls">
+                        <label>Qty:</label>
+                        <select class="qty-select">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <span class="delete-btn">Delete</span>
+                    </div>
+                </div>
+                <div class="item-price">$<span class="item-total">45.00</span></div>
+            </div>
+            <hr>
+
+            <!-- Tổng tiền dưới danh sách -->
+            <div class="subtotal-bottom">
+                Subtotal (<span class="total-qty">3</span> items): <strong>$<span id="subtotal-amount">264.49</span></strong>
+            </div>
+        </div>
+
+        <!-- Cột phải: Khối thanh toán Subtotal -->
+        <div class="cart-sidebar">
+            <div class="subtotal-box">
+                <p>Subtotal (<span class="total-qty">3</span> items): <br><strong>$<span id="sidebar-subtotal-amount">264.49</span></strong></p>
+                <button class="checkout-btn">Proceed to checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
